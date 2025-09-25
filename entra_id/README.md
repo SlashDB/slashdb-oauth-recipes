@@ -52,6 +52,43 @@ authentication_policies:
           visible: True
 ```
 
+For the authentication to be successful, you need to have a matching user in SlashDB.
+
+For example, if you're authenticating as a Service Principal and you have the IDP configured as above,
+you need a SlashDB user with the name matching the Object ID of the Service Principal.
+
+If you're authenticating a user account, you can use `sub` claim, which contains the ID of the user,
+or change the configuration to use email instead, which might be more convenient:
+
+```yaml
+authentication_policies:
+  jwt:
+    enabled: True
+    priority: 10
+    gui:
+      visible: True
+    identity_providers:
+      entra-id:
+        idp_name: Entra ID
+        enabled: True
+        claim_attribute: email # We'll match the user based on the email
+        user_config_attribute: email
+        client_id: {CLIENT_ID} # This doesn't need to be the same client, but must be within the same tenant
+        redirect_uri: http://slashdb.internal/login/callback?idp_id=entra-id
+        response_type: code
+        scope: openid email
+        jwks_uri: https://login.microsoftonline.com/{TENANT_ID}/discovery/v2.0/keys
+        authorization_endpoint: https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/authorize
+        token_endpoint: https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token
+        gui:
+          visible: True
+```
+
+Then you need to have a SlashDB user with a matching email value.
+
+See the documentation for more information:
+[https://docs.slashdb.com/user-guide/security/authentication/#sso-openid-connect]
+
 ## Service Principal
 
 The `jwt_login_entra_id_service_principal.py` script showcases a 

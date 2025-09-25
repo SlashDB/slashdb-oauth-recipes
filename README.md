@@ -12,4 +12,8 @@ It contains examples for:
   - Interactive — for user accounts
 - Keycloak
 
-See the subdirectories for more information.
+See the subdirectories for more information about specific Identity Providers.
+
+For more details on Single Sign-On authentication in SlashDB, see the official
+documentation:
+[https://docs.slashdb.com/user-guide/security/authentication/#sso-openid-connect]

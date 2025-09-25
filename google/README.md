@@ -52,6 +52,13 @@ authentication_policies:
           visible: True
 ```
 
+For the authentication to be successful, you need to have a matching user in SlashDB.
+For example, the configuration above will match the user based on the email value,
+so you need a user account in SlashDB with the email property matching the email of the user.
+
+See the documentation for more information:
+[https://docs.slashdb.com/user-guide/security/authentication/#sso-openid-connect]
+
 ## Service Account
 
 The `jwt_login_google_service_account.py` script showcases a 
