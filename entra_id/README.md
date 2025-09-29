@@ -107,3 +107,12 @@ Once the user logs in, the script will use the acquired ID token to authenticate
 The token will also be saved in the cache file, so that the user will not have to log in next time.
 
 Note: this flow requires a "Mobile and desktop applications" redirect uri for `http://localhost`.
+
+
+## Azure CLI
+
+The `jwt_login_entra_id_azure_cli.py` script showcases an authentication using the Azure CLI.
+
+Given the user have previously authenticated with `az login`,
+the script will use the `az account get-access-token` command to acquire an access token
+and then use that token to authenticate with SlashDB.
