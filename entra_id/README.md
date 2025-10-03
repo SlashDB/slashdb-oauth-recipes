@@ -14,12 +14,19 @@ cp config.example.ini config.ini
 
 And replace the contents with your values.
 
+For the secret values it's better to use environment variables instead of the text file.
+
 - `tenant_id`: ID of the tenant within which you want to authenticate
+    Env. variable name: `SLASHDB_TENANT_ID`
 - `client_id`: ID of the App registration within Entra ID
+    Env. variable name: `SLASHDB_CLIENT_ID`
 - `client_secret`: Secret value from the client secret in the App registration
     Only needed for the Service Principal authentication.
+    Env. variable name: `SLASHDB_CLIENT_SECRET`
 - `slashdb_idp_id`: IDP ID assigned in `auth.cfg` of your SlashDB configuration
+    Env. variable name: `SLASHDB_IDP_ID`
 - `slashdb_url`: URL to your SlashDB instance
+    Env. variable name: `SLASHDB_URL`
 
 ## SlashDB Config
 

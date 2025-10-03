@@ -1,5 +1,6 @@
 import subprocess
 import json
+import os
 
 import requests
 import base64
@@ -10,8 +11,8 @@ config_file.read("./config.ini")
 
 config = config_file["config"]
 
-SLASHDB_IDP_ID = config["slashdb_idp_id"]
-SLASHDB_URL = config["slashdb_url"]
+SLASHDB_IDP_ID = os.getenv('SLASHDB_IDP_ID', config["slashdb_idp_id"])
+SLASHDB_URL = os.getenv('SLASHDB_URL', config["slashdb_url"])
 
 
 def get_access_token() -> str:

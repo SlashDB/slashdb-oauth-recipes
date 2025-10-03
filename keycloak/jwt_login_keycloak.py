@@ -1,5 +1,6 @@
 import base64
 import requests
+import os
 
 import configparser
 
@@ -8,13 +9,13 @@ config_file.read("./config.ini")
 
 config = config_file["config"]
 
-KEYCLOAK_URL = config["keycloak_url"]
-REALM_NAME = config["realm_name"]
-CLIENT_ID = config["client_id"]
-USERNAME = config["username"]
-PASSWORD = config["password"]
-SLASHDB_IDP_ID = config["slashdb_idp_id"]
-SLASHDB_URL = config["slashdb_url"]
+KEYCLOAK_URL = os.getenv("SLASHDB_KEYCLOAK_URL", config["keycloak_url"])
+REALM_NAME = os.getenv("SLASHDB_KEYCLOAK_REALM_NAME", config["realm_name"])
+CLIENT_ID = os.getenv("SLASHDB_CLIENT_ID", config["client_id"])
+USERNAME = os.getenv("SLASHDB_KEYCLOAK_USERNAME", config["username"])
+PASSWORD = os.getenv("SLASHDB_KEYCLOAK_PASSWORD", config["password"])
+SLASHDB_IDP_ID = os.getenv('SLASHDB_IDP_ID', config["slashdb_idp_id"])
+SLASHDB_URL = os.getenv('SLASHDB_URL', config["slashdb_url"])
 
 # Endpoint for the token request
 TOKEN_URL = f"{KEYCLOAK_URL}/realms/{REALM_NAME}/protocol/openid-connect/token"

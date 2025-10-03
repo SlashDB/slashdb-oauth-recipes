@@ -1,17 +1,18 @@
 import requests
 import base64
 import configparser
+import os
 
 config_file = configparser.ConfigParser()
 config_file.read("./config.ini")
 
 config = config_file["config"]
 
-TENANT_ID = config["tenant_id"]
-CLIENT_ID = config["client_id"]
-CLIENT_SECRET = config["client_secret"]
-SLASHDB_IDP_ID = config["slashdb_idp_id"]
-SLASHDB_URL = config["slashdb_url"]
+TENANT_ID = os.getenv("SLASHDB_TENANT_ID", config["tenant_id"])
+CLIENT_ID = os.getenv("SLASHDB_CLIENT_ID", config["client_id"])
+CLIENT_SECRET = os.getenv("SLASHDB_CLIENT_SECRET", config["client_secret"])
+SLASHDB_IDP_ID = os.getenv('SLASHDB_IDP_ID', config["slashdb_idp_id"])
+SLASHDB_URL = os.getenv('SLASHDB_URL', config["slashdb_url"])
 
 token_url = f"https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token"
 

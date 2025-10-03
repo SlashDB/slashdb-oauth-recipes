@@ -1,4 +1,5 @@
 import json
+import os
 from flask import Flask, redirect, request
 from werkzeug.serving import make_server
 import requests
@@ -17,9 +18,9 @@ slashdb_idp_id = config["slashdb_idp_id"]
 with open(service_account_info_file) as f:
     service_account_info = json.load(f)
 
-CLIENT_ID = config["client_id"]
-CLIENT_SECRET = config["client_secret"]
-SLASHDB_URL = config["slashdb_url"]
+CLIENT_ID = os.getenv("SLASHDB_CLIENT_ID", config["client_id"])
+CLIENT_SECRET = os.getenv("SLASHDB_CLIENT_SECRET", config["client_secret"])
+SLASHDB_URL = os.getenv('SLASHDB_URL', config["slashdb_url"])
 
 SERVER_PORT = 5000
 REDIRECT_URI = f'http://127.0.0.1:{SERVER_PORT}/callback'

@@ -27,10 +27,10 @@ config_file.read("./config.ini")
 
 config = config_file["config"]
 
-TENANT_ID = config["tenant_id"]
-CLIENT_ID = config["client_id"]
-SLASHDB_IDP_ID = config["slashdb_idp_id"]
-SLASHDB_URL = config["slashdb_url"]
+TENANT_ID = os.getenv("SLASHDB_TENANT_ID", config["tenant_id"])
+CLIENT_ID = os.getenv("SLASHDB_CLIENT_ID", config["client_id"])
+SLASHDB_IDP_ID = os.getenv('SLASHDB_IDP_ID', config["slashdb_idp_id"])
+SLASHDB_URL = os.getenv('SLASHDB_URL', config["slashdb_url"])
 
 authority_url = f"https://login.microsoftonline.com/{TENANT_ID}"
 

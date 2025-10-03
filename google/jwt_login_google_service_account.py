@@ -2,6 +2,7 @@ import requests
 import base64
 import json
 import configparser
+import os
 
 import utils
 
@@ -9,7 +10,7 @@ config_file = configparser.ConfigParser()
 config_file.read("config.ini")
 config = config_file["config"]
 
-SLASHDB_URL = config["slashdb_url"]
+SLASHDB_URL = os.getenv('SLASHDB_URL', config["slashdb_url"])
 
 service_account_info_file = config["service_account_info_file"]
 slashdb_idp_id = config["slashdb_idp_id"]

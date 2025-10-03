@@ -14,12 +14,18 @@ cp config.example.ini config.ini
 
 And replace the contents with your values.
 
+For the secret values it's better to use environment variables instead of the text file.
+
 - `service_account_info_file`: Path to the private key file for the Service Account.
     It's available for download when creating a key for the Service Account.
 - `client_id`: ID of the Google OAuth2 Client
+    Env. variable name: `SLASHDB_CLIENT_ID`
 - `client_secret`: Secret of the Google OAuth2 Client
+    Env. variable name: `SLASHDB_CLIENT_SECRET`
 - `slashdb_idp_id`: IDP ID assigned in `auth.cfg` of your SlashDB configuration
+    Env. variable name: `SLASHDB_IDP_ID`
 - `slashdb_url`: URL to your SlashDB instance
+    Env. variable name: `SLASHDB_URL`
 
 ## SlashDB Config
 
