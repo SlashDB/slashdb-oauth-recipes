@@ -50,3 +50,17 @@ resp = requests.get(
     headers=headers,
 )
 print("Authenticated as: ", resp.json()["user"])
+
+# Data Discovery
+resp = requests.get(
+    f"{SLASHDB_URL}/db/Chinook/Album.json?limit=2",
+    headers=headers,
+)
+print(resp.json())
+
+# SQL Pass-thru
+resp = requests.get(
+    f"{SLASHDB_URL}/query/invoices-by-year/year/2013.json?limit=3",
+    headers=headers,
+)
+print(resp.json())
