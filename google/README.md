@@ -67,6 +67,8 @@ See the documentation for more information:
 
 ## Service Account
 
+Use this flow for applications or services that need to run unattended (i.e. scheduled tasks).
+
 The `jwt_login_google_service_account.py` script showcases a 
 Service Account authentication with SlashDB.
 
@@ -87,6 +89,8 @@ but it requires the Service Account to have permissions to modify the IAM policy
 
 
 ## Interactive
+
+Use this flow for developing web, single page or mobile apps, or in other situations where users can login interactively.
 
 The `jwt_login_google_interactive.py` script showcases an
 user account authentication with SlashDB.
