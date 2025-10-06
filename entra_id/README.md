@@ -98,6 +98,8 @@ See the documentation for more information:
 
 ## Service Principal
 
+Use this flow for applications or services that need to run unattended (i.e. scheduled tasks).
+
 The `jwt_login_entra_id_service_principal.py` script showcases a 
 Service Principal authentication with SlashDB.
 
@@ -105,6 +107,9 @@ It uses the Client ID and Client Secret to obtain an ID token from Entra ID
 and then uses that token to authenticate with SlashDB.
 
 ## Interactive
+
+Use this flow for developing web, single page or mobile apps, or in other situations where
+users can login interactively.
 
 The `jwt_login_entra_id_interactive.py` script showcases an
 user account authentication with SlashDB.
@@ -118,8 +123,14 @@ Note: this flow requires a "Mobile and desktop applications" redirect uri for `h
 
 ## Azure CLI
 
+Use this flow on Windows workstations with Azure CLI to avoid having the user to authenticate
+separately.
+
 The `jwt_login_entra_id_azure_cli.py` script showcases an authentication using the Azure CLI.
 
 Given the user have previously authenticated with `az login`,
 the script will use the `az account get-access-token` command to acquire an access token
 and then use that token to authenticate with SlashDB.
+
+It may be possible to use this flow for an unattended application working under Windows
+user credentials, but we have not tested that.
