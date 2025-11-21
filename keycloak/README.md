@@ -16,20 +16,15 @@ And replace the contents with your values.
 
 For the secret values it's better to use environment variables instead of the text file.
 
-- `keycloak_url`: URL to your Keycloak instance
-    Env. variable name: `SLASHDB_KEYCLOAK_URL`
-- `realm_name`: Name of your Keycloak realm
-    Env. variable name: `SLASHDB_KEYCLOAK_REALM_NAME`
-- `client_id`: ID of the Client within Keycloak
-    Env. variable name: `SLASHDB_CLIENT_ID`
-- `username`: Username of the Keycloak user
-    Env. variable name: `SLASHDB_KEYCLOAK_USERNAME`
-- `password`: Password of the Keycloak user
-    Env. variable name: `SLASHDB_KEYCLOAK_PASSWORD`
-- `slashdb_idp_id`: IDP ID assigned in `auth.cfg` of your SlashDB configuration
-    Env. variable name: `SLASHDB_IDP_ID`
-- `slashdb_url`: URL to your SlashDB instance
-    Env. variable name: `SLASHDB_URL`
+| Attribute                                 | Description                                                 | Environment Variable          |
+|-------------------------------------------|-------------------------------------------------------------|-------------------------------|
+| `service_account_info_file``keycloak_url` | URL to your Keycloak instance                               | `SLASHDB_KEYCLOAK_URL`        |
+| `realm_name`                              | Name of your Keycloak realm                                 | `SLASHDB_KEYCLOAK_REALM_NAME` |
+| `client_id`                               | ID of the Client within Keycloak                            | `SLASHDB_CLIENT_ID`           |
+| `username`                                | Username of the Keycloak user                               | `SLASHDB_KEYCLOAK_USERNAME`   |
+| `password`                                | Password of the Keycloak user                               | `SLASHDB_KEYCLOAK_PASSWORD`   |
+| `slashdb_idp_id`                          | IDP ID assigned in `auth.cfg` of your SlashDB configuration | `SLASHDB_IDP_ID`              |
+| `slashdb_url`                             | URL to your SlashDB instance                                | `SLASHDB_URL`                 |
 
 ## SlashDB Config
 
