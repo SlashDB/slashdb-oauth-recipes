@@ -16,17 +16,13 @@ And replace the contents with your values.
 
 For the secret values it's better to use environment variables instead of the text file.
 
-- `tenant_id`: ID of the tenant within which you want to authenticate
-    Env. variable name: `SLASHDB_TENANT_ID`
-- `client_id`: ID of the App registration within Entra ID
-    Env. variable name: `SLASHDB_CLIENT_ID`
-- `client_secret`: Secret value from the client secret in the App registration
-    Only needed for the Service Principal authentication.
-    Env. variable name: `SLASHDB_CLIENT_SECRET`
-- `slashdb_idp_id`: IDP ID assigned in `auth.cfg` of your SlashDB configuration
-    Env. variable name: `SLASHDB_IDP_ID`
-- `slashdb_url`: URL to your SlashDB instance
-    Env. variable name: `SLASHDB_URL`
+| Attribute        | Description                                                                                                          | Environment Variable    |
+|------------------|----------------------------------------------------------------------------------------------------------------------|-------------------------|
+| `tenant_id`      | ID of the tenant within which you want to authenticate                                                               | `SLASHDB_TENANT_ID`     |
+| `client_id`      | ID of the App registration within Entra ID                                                                           | `SLASHDB_CLIENT_ID`     |
+| `client_secret`  | Secret value from the client secret in the App registration     Only needed for the Service Principal authentication | `SLASHDB_CLIENT_SECRET` |
+| `slashdb_idp_id` | IDP ID assigned in `auth.cfg` of your SlashDB configuration                                                          | `SLASHDB_IDP_ID`        |
+| `slashdb_url`    | URL to your SlashDB instance                                                                                         | `SLASHDB_URL`           |
 
 ## SlashDB Config
 
@@ -100,7 +96,7 @@ See the documentation for more information:
 
 Use this flow for applications or services that need to run unattended (i.e. scheduled tasks).
 
-The `jwt_login_entra_id_service_principal.py` script showcases a 
+The `jwt_login_entra_id_service_principal.py` script showcases a
 Service Principal authentication with SlashDB.
 
 It uses the Client ID and Client Secret to obtain an ID token from Entra ID
