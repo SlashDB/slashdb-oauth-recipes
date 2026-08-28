@@ -9,14 +9,14 @@ config_file.read("./config.ini")
 
 config = config_file["config"]
 
-CLIENT_ID = os.getenv("CLIENT_ID", config["client_id"])
+CLIENT_ID = os.getenv("OKTA_CLIENT_ID", config["client_id"])
 USERNAME = os.getenv("OKTA_USERNAME", config["username"])
 PASSWORD = os.getenv("OKTA_PASSWORD", config["password"])
 SLASHDB_IDP_ID = os.getenv("SLASHDB_IDP_ID", config["slashdb_idp_id"])
 SLASHDB_URL = os.getenv("SLASHDB_URL", config["slashdb_url"])
 
 # Endpoint for the token request
-TOKEN_URL = os.getenv("TOKEN_URL", config["token_url"])
+TOKEN_URL = os.getenv("OKTA_TOKEN_URL", config["token_url"])
 
 
 def get_jwt() -> str:
