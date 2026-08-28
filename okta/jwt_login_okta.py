@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     # Data Discovery
     resp = requests.get(
-        f"{SLASHDB_URL}/db.json",
+        f"{SLASHDB_URL}/db/Chinook/Album.json?limit=2",
         headers=headers,
     )
     print(resp.json())
