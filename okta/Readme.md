@@ -70,4 +70,4 @@ SlashDB.
 It uses the username and password to obtain an ID token from Okta
 and then uses that token to authenticate with SlashDB.
 
-Note: this uses an okta Native App and with Resource Owner Password enable and with password only access policy in Okta Authentication Policies assigned to the Navite App
+Note: this uses an okta Native App and with Resource Owner Password enabled and with password only access policy in Okta Authentication Policies assigned to the Native App
