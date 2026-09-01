@@ -24,9 +24,9 @@ def get_jwt() -> str:
         "client_id": CLIENT_ID,
         "username": USERNAME,
         "password": PASSWORD,
-        # It requires okta Native App and Resource Owner Password enable
+        # It requires an Okta Native App and Resource Owner Password enabled,
         # with password only access policy in
-        # Okta Authentication Policies assigned to Navite App
+        # Okta Authentication Policies assigned to Native App
         "grant_type": "password",
         "scope": "openid email"
     }
