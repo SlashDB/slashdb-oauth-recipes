@@ -35,8 +35,8 @@ def get_jwt() -> str:
 
     if response.status_code == 200:
         token_data = response.json()
-        access_token = token_data.get("id_token")
-        return access_token
+        id_token = token_data.get("id_token")
+        return id_token
     else:
         print("Failed to get token from Okta:")
         print(response.text)
