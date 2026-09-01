@@ -19,7 +19,7 @@ For the secret values it's better to use environment variables instead of the te
 | Attribute                                 | Description                                                 | Environment Variable          |
 |-------------------------------------------|-------------------------------------------------------------|-------------------------------|
 | `client_id` | Client ID assigned for Okta Native/Services App                               | `OKTA_CLIENT_ID`        |
-| `client_secret` | Client Secret assigned for Okta Native/Services App                               | `OKTA_CLIENT_ID`        |
+| `client_secret` | Client Secret assigned for Okta Native/Services App                               | `OKTA_CLIENT_SECRET`        |
 | `username`                              | Okta user username                                 | `OKTA_USERNAME` |
 | `password`                               | Okta user password                            | `OKTA_PASSWORD`           |
 | `slashdb_idp_id`                          | IDP ID assigned in `auth.cfg` of your SlashDB configuration | `SLASHDB_IDP_ID`              |
