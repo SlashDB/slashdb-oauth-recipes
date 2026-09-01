@@ -62,12 +62,20 @@ so you need a user account in SlashDB with the email property matching the email
 See the documentation for more information:
 [https://docs.slashdb.com/user-guide/security/authentication/#sso-openid-connect]
 
-## Script
+## Script - User credentials
 
 The `jwt_login_okta.py` script showcases an Okta authentication with
-SlashDB.
+SlashDB using user credentials.
 
 It uses the username and password to obtain an ID token from Okta
 and then uses that token to authenticate with SlashDB.
 
 Note: this uses an okta Native App and with Resource Owner Password enabled and with password only access policy in Okta Authentication Policies assigned to the Native App
+
+## Script - Client Secret
+
+The `jwt_service_okta.py` script showcases an Okta authentication with
+SlashDB using the Okta application client secret.
+
+It uses the Okta application client secret to obtain an ID token from Okta
+and then uses that token to authenticate with SlashDB, this approach is recommended for Machine to Machine access (unattended jobs).
